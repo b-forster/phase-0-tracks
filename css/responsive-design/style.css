@@ -32,6 +32,7 @@ cite {
 }
 
 
+
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
 but it's optional! */
@@ -47,4 +48,34 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+/*
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+  */
+
+  @media (min-width: 700px){
+    .main{
+    display: block;
+  }
+}
+
+@media all and (orientation:portrait) {
+
+  body{
+    width:100%
+  }
+    .main{
+    display: inline-block;
+    width:100%;
+  }
+}
+@media all and (orientation:landscape) {
+  .aside , .main{
+    display: inline-block;
+    vertical-align: top;
+  }
+
 }
