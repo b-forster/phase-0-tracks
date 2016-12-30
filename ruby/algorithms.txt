@@ -1,0 +1,27 @@
+Algorithm for using an elevator:
+
+- Check which floor you’re on (= current_floor), and which floor you want to go to (=destination_floor).
+ - If current_floor - destination_floor is a positive number, press the button going down.
+ - If current_floor - destination_floor is a negative number, press the button going up. 
+ - If current_floor - destination_floor is zero, then you’re already on the right floor. Do not use the elevator.
+- Move 1 meter back and stand facing the door.
+- When the doors open, check if there is room for you in the elevator. 
+ - If there is no room, wait until the elevator has started moving and press the same up or down button as before. Repeat this step until the elevator has room.
+ - When there is enough room, enter the elevator.
+- Check to see if there is another human or robot in front of the floor button panel.
+ - If someone is there, tell them your destination floor.
+ - If no one is there, move to the button panel, face toward it, and enter the number corresponding to destination_floor.
+- When the elevator stops, check if the new current_floor = destination_floor.
+ - If they are not equal, wait and repeat this step.
+ - If they are equal, exit the elevator.
+
+
+Algorithm for when the alarm rings:
+
+- Is it a weekend or holiday?
+ - If yes, is your calendar clear for the next two hours?
+   - If yes, turn off the alarm and go back to sleep.
+   - If no, turn off the alarm and wake up.
+ - If no, are you feeling sick today?
+  - If yes, turn off the alarm and call in sick to work.
+  - If no, turn off the alarm and wake up.
