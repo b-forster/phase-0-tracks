@@ -11,7 +11,7 @@ puts "zom".insert(1,'o')
 puts "zom".insert(2,'o')
 # => “zoom”
 
-# "enhance".<???>
+puts "enhance".center(15)
 # => "    enhance    "
 
 puts "Stop! You’re under arrest!".upcase
@@ -20,7 +20,7 @@ puts "Stop! You’re under arrest!".upcase
 puts "the usual" << " suspects"
 #=> "the usual suspects"
 
-# " suspects".<???>
+puts " suspects".prepend("the usual")
 # => "the usual suspects"
 
 puts "The case of the disappearing last letter".chomp("r")
@@ -29,12 +29,12 @@ puts "The case of the disappearing last letter".chomp("r")
 puts "The mystery of the missing first letter".delete "T"
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+puts "Elementary,    my   dear        Watson!".squeeze
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
+puts "z".codepoints
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
-
-# "How many times does the letter 'a' appear in this string?".<???>
+# 122 is the UTF-8 integer value of the character z.
+puts "How many times does the letter 'a' appear in this string?".count "a"
 # => 4
