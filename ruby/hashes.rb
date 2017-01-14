@@ -1,3 +1,4 @@
+
 #Assign variables to user input
 
 puts "Name:"
@@ -11,7 +12,7 @@ num_of_rooms = gets.chomp.to_i
 
 puts "Have you decided on a decor style? (y/n):"
 decided_on_style = gets.chomp
-#convert to boolean
+#Convert to boolean
 if decided_on_style == "y"
 	decided_on_style = true
 else
@@ -44,10 +45,23 @@ key_to_change = gets.chomp
 if key_to_change == "none"
 	puts "We have received your responses. Thank you!"
 else
-	key_to_change.to_sym
 	puts "New response for '#{key_to_change}':"
 	updated_response = gets.chomp
-	key_to_change = updated_response
-	puts "We have received your updated responses. Thank you!"
+
+#Covert to integer for "Age", "Number of rooms"
+	if (key_to_change == "Age" || key_to_change == "Number of rooms")
+		updated_response = updated_response.to_i
+
+#Convert to boolean for "Decided on style"
+	elsif key_to_change == "Decided on style"
+		if updated_response == "y"
+			updated_response = true
+		else
+			updated_response = false
+		end
+	end
+		
+	user_responses[key_to_change] = updated_response
 	puts user_responses
+	puts "We have received your updated responses. Thank you!"
 end
