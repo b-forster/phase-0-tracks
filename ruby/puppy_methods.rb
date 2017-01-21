@@ -51,8 +51,9 @@ spot.sit
 # Cat class
 
 class Cat
-	def initialize
+	def initialize(name)
 		p "Hey, I like cats!"
+		p "My name is #{name}."
 	end
 
 	def number_of_cats(number)
@@ -67,11 +68,23 @@ end
 
 # DRIVER CODE
 
-fluffy = Cat.new
+#fluffy = Cat.new
 
-fluffy.number_of_cats(6)
+#fluffy.number_of_cats(6)
 
-fluffy.chase_item("string")
+#fluffy.chase_item("string")
 
+# Store names in array
 
+names = []
 
+50.times do |index| 
+	random_name = "cat owner #{index +=1}"
+	names << random_name
+end
+
+names.each do |name|
+	name = Cat.new(name)
+	name.number_of_cats(6)
+	name.chase_item("string")
+end
