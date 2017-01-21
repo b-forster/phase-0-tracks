@@ -1,5 +1,3 @@
-=begin
-
 # Puppy class
 
 class Puppy
@@ -46,7 +44,6 @@ spot.dog_years(2)
 
 spot.sit
 
-=end
 
 # Cat class
 
