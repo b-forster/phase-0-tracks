@@ -1,4 +1,6 @@
 class Santa
+	attr_accessor :gender, :age, :ethnicity
+
 	def initialize(gender, ethnicity)
 		@reindeer_ranking = 
 			["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -39,6 +41,7 @@ class Santa
 		#p @reindeer_ranking
 	end
 
+=begin
 	def gender
 		@gender
 	end
@@ -54,6 +57,9 @@ class Santa
 	def gender=(new_gender)
 		@gender = new_gender
 	end
+
+=end
+
 end
 
 # DRIVER CODE
