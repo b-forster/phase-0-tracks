@@ -83,5 +83,24 @@ santa2.age
 santa2.get_mad_at("Dancer")
 santa2.least_fav_reindeer
 santa2.eat_milk_and_cookies("Oreo")
+puts "------"
+
+# Release 4
+
+santas = []
+example_genders = ["agender", "androgynous", "bigender", "genderqueer", "male", "female", 
+	"gender fluid", "intersex", "N/A", "non-binary", "pangender", "trans female", "trans male",
+	"android", "fembot"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "East Asian", "South Asian",
+	"Southeast Asian", "Middle Eastern", "Jewish", "Native American", "Elven", "Aboriginal",
+	"Dragonkin", "Time-Lord", "Interstellar", "Vampire", "Gremlin", "Fey", "mutant",
+	"Atlantean", "Asgardian", "Plutonian", "Alpha-Centaurian", "Kryptonian", "Undead",
+	"prefer not to say", "Unicorn", "N/A", "being of pure energy and light", "Orcish", "Hobbit",
+	"demonic", "Pandaren", "Protoss", "hobgoblin", "Nymph", "Centaur", "Satyr", "djinn",
+	"Inuit", "First Nations", "North Polean", "mixed race", "cyborg", "Vulcan"]
+1000.times do |i|
+  #santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+  puts "Santa ##{i+1} is a(n) #{example_genders.sample}, #{example_ethnicities.sample} Santa."
+end
 
 
