@@ -81,3 +81,42 @@ p remove_item(groceries_list, "lemonade")
 p update_quantity(groceries_list, "ice cream", 1)
 
 pretty_list(groceries_list)
+
+
+=begin
+
+Release 4: Reflect
+
+
+- What did you learn about pseudocode from working on this challenge?
+
+	I learned that it can be easier to keep track of what you're coding
+	if you map out each step ahead of time.
+
+- What are the tradeoffs of using arrays and hashes for this challenge?
+
+	 Arrays seem simpler to manipulate, but hashes make it much easier
+	 to keep related sets of data together.
+
+- What does a method return?
+
+	A method returns the output of the last line in the method.
+
+- What kind of things can you pass into methods as arguments?
+	
+	Variables and values that will be used inside the method.
+
+- How can you pass information between methods?
+	
+	One way is to assign return value of a method to a variable outside
+	the method, and use that variable as an argument for a second method.
+
+- What concepts were solidified in this challenge, and what concepts are 
+still confusing?
+
+	In this challenge I got a bit more used to manipulating arrays and
+	hashes. It is still a challenge to create and use methods the way I
+	want to.
+
+
+=end
