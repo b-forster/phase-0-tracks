@@ -22,9 +22,9 @@
 # input: groceries_list, new item to add
 # steps: 
 	# name method and parameters
-def add_item (groceries_list, new_item)
+def add_item (groceries_list, new_item, quantity)
 	# add 1 new item to list
-	groceries_list.merge!({new_item => 1})
+	groceries_list.merge!({new_item => quantity})
 	# return updated list
 	groceries_list
 # output: hash
@@ -71,10 +71,13 @@ end
 
 groceries_list = make_list("carrots apples cereal pizza")
 
-p add_item(groceries_list, "nutella")
+p add_item(groceries_list, "lemonade", 2)
+p add_item(groceries_list, "tomatoes", 3)
+p add_item(groceries_list, "onions", 1)
+p add_item(groceries_list, "ice cream", 4)
 
-p remove_item(groceries_list, "apples")
+p remove_item(groceries_list, "lemonade")
 
-p update_quantity(groceries_list, "carrots", 5)
+p update_quantity(groceries_list, "ice cream", 1)
 
 pretty_list(groceries_list)
