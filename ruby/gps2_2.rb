@@ -25,27 +25,56 @@
 def add_item (groceries_list, new_item)
 	# add 1 new item to list
 	groceries_list.merge!({new_item => 1})
-	# print updated list
-	p groceries_list
+	# return updated list
+	groceries_list
 # output: hash
 end
 
+# Method to remove an item from the list
+# input: item to be removed
+# steps:
+	# name method and paramentrs
+def remove_item(groceries_list, item_to_remove)
+	# remove item from list
+	groceries_list.delete(item_to_remove)
+	# return updated list
+	groceries_list
+end
+# output: hash with item removed
+
+
+# Method to update the quantity of an item
+# input: groceries_list, item (key) input, desired quantity (value) 
+# steps:
+	# name method and parameters
+def update_quantity(groceries_list, item, new_quantity)
+	# Change value for inputted key to the desired quantity
+	groceries_list [item] = new_quantity
+	groceries_list
+end
+# output: Hash with updated quantity
+
+# Method to print a list and make it look pretty
+# input: groceries_list (each key and value can be called from there)
+# steps: 
+	# name method and parameters
+def pretty_list(groceries_list)
+	# Print a line of text to lead into the list
+	puts "Here is your updated grocery list:"
+	# for each key and value in the list, print a string 
+	# containing the key and value
+	groceries_list.each do |item, quantity|
+		puts "#{item}: #{quantity}"
+	end
+end
+# output: printed list
 
 groceries_list = make_list("carrots apples cereal pizza")
 
-add_item(groceries_list, "nutella")
+p add_item(groceries_list, "nutella")
 
-# Method to remove an item from the list
-# input:
-# steps:
-# output:
+p remove_item(groceries_list, "apples")
 
-# Method to update the quantity of an item
-# input:
-# steps:
-# output:
+p update_quantity(groceries_list, "carrots", 5)
 
-# Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
+pretty_list(groceries_list)
