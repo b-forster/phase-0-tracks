@@ -5,43 +5,56 @@
 
 # EXPLANATION OF require_relative
 #
-#
+#require_relative: refers to another file in same directory
+#require: doesn't have to be in same directory
 require_relative 'state_data'
 
 class VirusPredictor
-
+#initializing with 3 parameters state_of_origin, population_density and population.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
+#This calls two other methods predicted deaths and speed of spread.
+
 
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths #(@population_density, @population, @state)
+    # speed_of_spread #(@population_density, @state)
   end
 
-  private
 
-  def predicted_deaths(population_density, population, state)
+private
+
+# This takes in population_density, population, and state and outputs a number which is the predicted deaths. 
+  def predicted_deaths #(population_density, population, state)
     # predicted deaths is solely based on population density
+    speed = 0.0
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
+      speed += 0.5
     elsif @population_density >= 150
       number_of_deaths = (@population * 0.3).floor
+      speed += 1
     elsif @population_density >= 100
       number_of_deaths = (@population * 0.2).floor
+      speed += 1.5
     elsif @population_density >= 50
       number_of_deaths = (@population * 0.1).floor
+      speed += 2
     else
       number_of_deaths = (@population * 0.05).floor
+      speed += 2.5
     end
 
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
+    puts"#{@state} will lose #{number_of_deaths} people in this outbreak and will spread across the state in #{speed} months.\n\n"
   end
 
-  def speed_of_spread(population_density, state) #in months
+=begin
+
+  # This takes in population_density, state, and it outputs a speed , it starts at 0.0
+  def speed_of_spread #(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -62,6 +75,8 @@ class VirusPredictor
 
   end
 
+=end
+
 end
 
 #=======================================================================
@@ -69,6 +84,7 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+=begin
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
@@ -82,6 +98,17 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
+=end
+
+STATE_DATA.each do |state, data|
+   state_virus = VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population])
+   #state_virus.virus_effects
+   state_virus.virus_effects
+end
+
+
+
+# p STATE_DATA
 
 #=======================================================================
 # Reflection Section
