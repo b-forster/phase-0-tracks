@@ -112,3 +112,37 @@ end
 
 #=======================================================================
 # Reflection Section
+
+=begin
+  
+- What are the differences between the two different hash syntaxes shown in the state_data file?
+
+   One syntax has quotation marks around the key name, followed by '=>'. 
+   The other has no quotation marks around they key name, and separates the key and value with ':'.
+
+
+- What does require_relative do? How is it different from require?
+
+   require_relative allows code in the same directory to be used in the current file.
+   require does the same thing, but refers to a file in a different directory, so the path must be provided.
+
+
+- What are some ways to iterate through a hash?
+
+  You can call call <HASH NAME>.each and set up a block, or you can use a regular loop.
+
+
+- When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+  The two methods that are called inside virus_effects take almost the same variables as parameters.
+
+- What concept did you most solidify in this challenge?
+
+  I solidified how to use a loop to easily create a large number of class instances.
+
+=end
+
+
+
+
+
