@@ -33,6 +33,28 @@ function checkMatch(customer1, customer2){
 // Release 2
 // takes an integer for length, and builds and returns an array of strings of the given length. 
 
+function wordsGenerator(length){
+	output_array = [];
+	lengths_array = [];
+	// loop for each word
+	for (i=0; i<length; i++){
+		string_length = Math.floor((Math.random() * 10) + 1);
+		lengths_array.push(string_length);
+		console.log(lengths_array);
+	//loop for each letter
+		possible_letters = "abcdefghijklmnopqrstuvwxyz";
+		random_word = "";
+		for (i=0; i<string_length; i++){
+			add_letter = possible_letters[Math.floor((Math.random() * 25))];
+			console.log(add_letter);
+			random_word =  random_word + add_letter;
+			console.log(random_word);
+			output_array.push(random_word);
+		}
+	}
+	console.log(output_array);
+}
+
 
 // DRIVER CODE
 
@@ -64,4 +86,10 @@ var customer2 = {name: "Steven", age: 54};
 console.log(checkMatch(customer1, customer2));
 
 // Release 2
+
+
+wordsGenerator(3);
+
+
+
 
