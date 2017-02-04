@@ -1,0 +1,58 @@
+1. Display the information in one table (either table is fine).
+
+SELECT * FROM students;
+
+1|Brianna Forster|3|3.45
+2|Leonardo da Vinci|1|2.3
+3|Albert Einstein|4|3.14
+4|Maya Angelou|3|3.7
+
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE students set gpa = 2.6 WHERE name = "Leonardo da Vinci";
+
+
+3. Display the information in both tables using one query.
+
+SELECT * FROM students, departments WHERE students.department = departments.id;
+
+1|Brianna Forster|3|3.45|3|Humanities
+2|Leonardo da Vinci|1|2.3|1|Art
+3|Albert Einstein|4|3.14|4|Sciences
+4|Maya Angelou|3|3.7|3|Humanities
+
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT students.name, departments.dept_name FROM students JOIN departments ON students.department = departments.id;
+
+Brianna Forster|Humanities
+Leonardo da Vinci|Art
+Albert Einstein|Sciences
+Maya Angelou|Humanities
+
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM students WHERE name="Albert Einstein";
+
+
+
+RELEASE 3 - Joins
+
+1.
+SELECT name, gpa FROM students NATURAL JOIN departments;
+
+Brianna Forster|3
+Leonardo da Vinci|1
+Maya Angelou|3
+
+(*No matching column names, so nothing was joined)
+
+2.
+SELECT name, department FROM students LEFT JOIN departments USING (department);
+
+Error: cannot join using column department - column not present in both tables
+sqlite> 
+
